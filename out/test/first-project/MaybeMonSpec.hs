@@ -14,6 +14,6 @@ spec =
       _lift 3 `shouldNotBe` NothingMon
     it "correctly binds between containers" $ do
       _lift 3 Lib.>>= (\x -> _lift (x + 3)) `shouldBe` JustMon 6
-      _lift 3 Lib.>>= (\x -> _lift (x ^ x)) `shouldBe` JustMon 28
+      _lift 3 Lib.>>= (\x -> _lift (x ^ x)) `shouldBe` JustMon 27
       NothingMon Lib.>>= (\x -> _lift (x ^ x)) `shouldBe` NothingMon
     it "can add a number in a Monad" $ 3 `plus` (_lift 4) `shouldBe` JustMon 7
