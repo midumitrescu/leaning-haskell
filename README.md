@@ -1,1 +1,1 @@
-# first-project
+# Haskel Study Project
