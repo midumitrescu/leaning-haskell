@@ -1,10 +1,10 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.31.0.
+-- This file has been generated from package.yaml by hpack version 0.31.2.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 470b66814ac5da4a5337996c5a1d3b705ab90a17f5df67b14525d70b414a118b
+-- hash: 3958b8babc99d39276e61d5265313eb235903a7d92c2a6856c57f54f57f3f39b
 
 name:           first-project
 version:        0.1.0.0
@@ -28,8 +28,7 @@ source-repository head
 library
   exposed-modules:
       Lib
-  other-modules:
-      Paths_first_project
+      , Types.WorkingWithTypes
   hs-source-dirs:
       src
   build-depends:
@@ -50,10 +49,12 @@ test-suite first-project-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
-      Paths_first_project
+      FirstSpec
+      MaybeMonSpec
+      WorkingWithTypesSpec
   hs-source-dirs:
       test
-  ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N -Wno-type-defaults -fforce-recomp
+  ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N -Wno-type-defaults
   build-depends:
       base >=4.7 && <5
     , first-project
