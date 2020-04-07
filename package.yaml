@@ -38,16 +38,9 @@ executables:
       - first-project
 
 tests:
-  unit-test:
+  first-project-test:
     main:                Spec.hs
     source-dirs:         test
-    hs-source-dirs:
-      test
-    build-depends:
-      base ==4.*
-      , hspec ==2.*
-      , strip
-      , first-project
     ghc-options:
       - -Wall
       - -threaded
@@ -56,3 +49,4 @@ tests:
       - -Wno-type-defaults
     dependencies:
       - first-project
+      - hspec ==2.*
