@@ -57,6 +57,15 @@ spec = do
       relativePrimesOf 30 `filter` [1 .. 66] `shouldBe`
         [1, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 49, 53, 59, 61]
       setComplement (relativePrimesOf 30) `filter` [1 .. 10] `shouldBe` [2, 3, 4, 5, 6, 8, 9, 10]
-  describe "working with operations on sets" $
+  describe "working with operations on sets" $ do
     it "computes correctly union of 2 sets" $
-    setUnion (interval 3 5) (interval 10 12) `filter` [1 .. 15] `shouldBe` [3, 4, 5, 10, 11, 12]
+      interval 3 5 `setUnion` interval 10 12 `filter` [1 .. 15] `shouldBe` [3, 4, 5, 10, 11, 12]
+    it "computes intersection of 2 sets" $ do
+      interval 3 5 `setIntersection` interval 10 12 `filter` [1 .. 15] `shouldBe` []
+      interval 3 8 `setIntersection` interval 5 12 `filter` [1 .. 15] `shouldBe` [5, 6, 7, 8]
+    it "computes adding to a sets" $ do
+      7 `addToSet` interval 10 12 `filter` [1 .. 15] `shouldBe` [7, 10, 11, 12]
+      7 `addToSet` interval 3 8 `filter` [1 .. 15] `shouldBe` [3 .. 8]
+      7 `addToSet` emptySet `filter` [1 .. 15] `shouldBe` [7]
+    it "computes adding to a sets" $ (setComplement (interval 3 5)) `filter` [1 .. 15] `shouldBe` [1, 2] ++ [6 .. 15]
+
