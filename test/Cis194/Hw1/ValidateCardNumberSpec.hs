@@ -1,6 +1,6 @@
-module Cis194.ValidateCardNumberSpec where
+module Cis194.Hw1.ValidateCardNumberSpec where
 
-import           Cis194.ValidateCardNumber
+import           Cis194.Hw1.ValidateCardNumber
 import           Test.Hspec
 
 main :: IO ()

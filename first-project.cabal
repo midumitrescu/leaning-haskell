@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: b30ffaa266d2f73d32ca534d2bc8cd5fa55ebe806da71ead0092f2140ae977c4
+-- hash: 4c671a7567e1d2968431fc3383608f5acb5fd5f785e11dd0361b857f958b1d3c
 
 name:           first-project
 version:        0.1.0.0
@@ -27,8 +27,10 @@ source-repository head
 
 library
   exposed-modules:
-      Cis194.ValidateCardNumber
+      Cis194.Hw1.TowersOfHanoi
+      Cis194.Hw1.ValidateCardNumber
       Lib
+      Mit.Hw1
       Types.WorkingWithTypes
   other-modules:
       Paths_first_project
@@ -54,9 +56,11 @@ test-suite first-project-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
-      Cis194.ValidateCardNumberSpec
+      Cis194.Hw1.TowersOfHanoiSpec
+      Cis194.Hw1.ValidateCardNumberSpec
       FirstSpec
       MaybeMonSpec
+      Mit.Hw1Spec
       WorkingWithTypesSpec
       Paths_first_project
   hs-source-dirs:

@@ -1,4 +1,4 @@
-module Cis194.ValidateCardNumber where
+module Cis194.Hw1.ValidateCardNumber where
 
 import           Data.List
 
@@ -13,7 +13,7 @@ toDigitsRev x
 
 doubleEveryOther :: [Integer] -> [Integer]
 doubleEveryOther [] = []
-doubleEveryOther list = reverse . advance Skipp $ (reverse  list)
+doubleEveryOther list = reverse . advance Skipp $ reverse list
 
 data Position = Multiply | Skipp
 
@@ -23,7 +23,7 @@ advance Skipp (x:xs) = x : advance Multiply xs
 advance Multiply (x:xs)  = 2 * x : advance Skipp xs
 
 splitIntoDigits :: [Integer] -> [Integer]
-splitIntoDigits = concatMap $ toDigits
+splitIntoDigits = concatMap toDigits
 
 sumDigits = sum . splitIntoDigits
 
