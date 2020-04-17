@@ -67,5 +67,5 @@ spec = do
       7 `addToSet` interval 10 12 `filter` [1 .. 15] `shouldBe` [7, 10, 11, 12]
       7 `addToSet` interval 3 8 `filter` [1 .. 15] `shouldBe` [3 .. 8]
       7 `addToSet` emptySet `filter` [1 .. 15] `shouldBe` [7]
-    it "computes adding to a sets" $ (setComplement (interval 3 5)) `filter` [1 .. 15] `shouldBe` [1, 2] ++ [6 .. 15]
+    it "computes adding to a sets" $ setComplement (interval 3 5) `filter` [1 .. 15] `shouldBe` [1, 2] ++ [6 .. 15]
 
